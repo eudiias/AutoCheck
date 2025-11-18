@@ -11,7 +11,8 @@ async function fetchVeiculos(veiculos,clientes) {
         selectClient.classList.add('editable-table-select');
         const trVeiculo = document.createElement('tr');
         trVeiculo.classList.add('table-line');
-        selectClient.id = `idVeiculo${veiculo.placa_carro}`;
+        selectClient.id = `SelectVeiculo${veiculo.placa_carro}`;
+        trVeiculo.id = `idVeiculo${veiculo.placa_carro}`;
         trVeiculo.innerHTML = `
             <td class="table-cellula">${veiculo.placa_carro}</td>
             <td class="table-cellula" id="select${veiculo.placa_carro}"></td>
@@ -49,7 +50,7 @@ fetchVeiculos(veiculos,clientes);
 async function atualizarVeiculo(placa) {
     try {
         console.log(placa);
-        const selectElement = document.getElementById(`idVeiculo${placa}`);
+        const selectElement = document.getElementById(`SelectVeiculo${placa}`);
         const idClienteSelecionado = selectElement.value;
         const response = await fetch(`https://fatecbackend.vercel.app/api/veiculos/atualizar/${placa}`, {
             method: 'PUT',
