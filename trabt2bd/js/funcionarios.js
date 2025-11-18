@@ -1,9 +1,10 @@
-    async function atualizarLista(){
+const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
+const funcionarios = await response.json();
+
+    async function atualizarLista(funcionarios){
         try {
-            const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
-            const data = await response.json();
             document.getElementById('tabelaFuncs').innerHTML = '';
-            for (const funcionario of data) {
+            for (const funcionario of funcionarios) {
                 const trFuncionario = document.createElement('tr');
                 trFuncionario.classList.add('table-line');
                 trFuncionario.id = funcionario.id_funcionario
@@ -83,4 +84,14 @@
         console.log(user)
         adicionarUsuario(user);
     })
-    atualizarLista();
+    document.getElementById("searchForm").addEventListener("submit",event => {
+        event.preventDefault()
+        const termoBusca = document.getElementById('searchInput').value.toLowerCase();
+        const funcionariosFiltrados = funcionarios.filter(funcionario => 
+            funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
+            funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
+            funcionario.funcao.toLowerCase().includes(termoBusca)
+        );
+        atualizarLista(funcionariosFiltrados);
+    });
+    atualizarLista(funcionarios);
