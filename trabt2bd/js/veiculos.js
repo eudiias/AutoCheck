@@ -79,8 +79,8 @@ async function removerVeiculo(placa) {
         if (!response.ok) {
             throw new Error('Erro ao remover veículo');
         }
-        alert('Veículo removido com sucesso!');
         const trVeiculo = document.getElementById(`idVeiculo${placa}`).remove();
+        alert('Veículo removido com sucesso!');
     } catch (error) {
         console.error('Erro ao remover veículo:', error);
         alert('Erro ao remover veículo.');
