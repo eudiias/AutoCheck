@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Veículos</title>
+    <title>Veículos - AutoCheck</title>
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="sidebar">
-            
-            <div class="sidebar-logo">
-                <img src="../imagens/Logo.png" alt="Logo">
-            </div>
 
-            <ul class="nav-links">
+    <header class="top-navbar">
+        <div class="navbar-logo">
+            <img src="../imagens/Logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar-nav">
+            <ul class="nav-links" id="nav-links">
                 <li>
                     <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
                 </li>
@@ -40,72 +40,83 @@
                     <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
                 </li>
             </ul>
-            
-            <div class="sidebar-footer">
-                <p>© 2025 LTDA AutoCheck</p>
-            </div>
         </nav>
+        
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
     <main class="main-content">
-        <h1 class="title">Gerenciador de Veículos</h1>
-        <h2 class="sub-title">Cadastro e gerenciamento de veículos</h2>
-        
-        <section class="style-search-container">
-            <h2 class="dashboard-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Veículos</h2>
-            <form action="#" class="search-container" method="post">
-                
-                <input 
-                    type="search" 
-                    id="search-input" 
-                    class="search-input" 
-                    placeholder="Buscar por placa"> <button type="submit" class="search-button">Pesquisar</button>
-            </form>
-        </section>
+        <div class="page-wrapper">
 
-        <section class="style-search-container">
-            <form action="#" method="post" class="container-client-form">
-
-                <div class="register-container">
-                    
-                    <div class="input-container">
-                        <label for="placa">Placa</label>
-                        <input type="text" name="placa" id="placa" placeholder="Digite a placa (ex: ABC1234)">
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="id_cliente">ID do Cliente</label>
-                        <input type="number" name="id_cliente" id="id_cliente" placeholder="Digite o ID do dono">
-                    </div>
-                    
-                    </div> 
-                <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Cadastrar Veículo</button>
-
-            </form>
-        </section>
-
-        <section class="style-search-container">
-            <h2 class="dashboard-title"><i class="fa-solid fa-list"></i>Veículos Cadastrados</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Placa</th>
-                        <th>Cliente</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="table-main">
-                 <!-- Dados dos veículos serão inseridos aqui dinamicamente -->
-                </tbody>
-            </table>
+            <header class="main-header">
+                <h1 class="title">Gerenciador de Veículos</h1>
+                <h2 class="sub-title">Cadastro e gerenciamento de veículos</h2>
+            </header>
             
-            <div class="prox-ant-container">
-                <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
-                <button class="button">Proxima  <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </section>
-    </main>
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Veículos</h2>
+                <form action="#" class="search-container" method="post">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Buscar por placa">
+                    <button type="submit" class="search-button">Pesquisar</button>
+                </form>
+            </section>
+
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-car-on"></i>Cadastrar Novo Veículo</h2>
+                <form class="container-client-form">
+
+                    <div class="register-container">
+                        <div class="input-container">
+                            <label for="placa">Placa</label>
+                            <input type="text" name="placa" id="placa" placeholder="Digite a placa (ex: ABC1234)">
+                        </div>
+                        <div class="input-container">
+                            <label for="id_cliente">ID do Cliente</label>
+                            <input type="number" name="id_cliente" id="id_cliente" placeholder="Digite o ID do dono">
+                        </div>
+                    </div> 
+                    
+                    <button class="orders-button button" type="submit">
+                        <i class="fa-solid fa-floppy-disk"></i>Cadastrar Veículo
+                    </button>
+                </form>
+            </section>
+
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-list"></i>Veículos Cadastrados</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>Cliente</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-main">
+                           </tbody>
+                    </table>
+                </div>
+                
+                <div class="prox-ant-container">
+                    <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
+                    <button class="button">Proxima <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </footer>
+
+        </div> </main>
 
     <script>
         async function fetchVeiculos() {
@@ -120,8 +131,8 @@
                     <td class="table-cellula">${veiculo.placa_carro}</td>
                     <td class="table-cellula">${veiculo.cliente_nome}</td>
                     <td class="table-cellula table-cellula-buttons">
-                        <button class="button">Editar</button>
-                        <button class="button">Excluir</button>
+                        <button class="button button-edit">Editar</button>
+                        <button class="button button-delete">Excluir</button>
                     </td>
                 `;
                 document.getElementById('table-main').appendChild(trVeiculo);

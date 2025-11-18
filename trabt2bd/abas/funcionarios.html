@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Funcionários</title>
+    <title>Funcionários - AutoCheck</title>
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="sidebar">  
-            <div class="sidebar-logo">
-                <img src="../imagens/Logo.png" alt="Logo">
-            </div>
 
-            <ul class="nav-links">
+    <header class="top-navbar">
+        <div class="navbar-logo">
+            <img src="../imagens/Logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar-nav">
+            <ul class="nav-links" id="nav-links">
                 <li>
                     <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
                 </li>
@@ -39,78 +40,90 @@
                     <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
                 </li>
             </ul>
-            
-            <div class="sidebar-footer">
-                <p>© 2025 LTDA AutoCheck</p>
-            </div>
         </nav>
+        
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
     <main class="main-content">
-        <h1 class="title">Gerenciador de Funcionários</h1>
-        <h2 class="sub-title">Cadastro e gerenciamento de funcionários</h2>
-        
-        <section class="style-search-container">
-            <h2 class="dashboard-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Funcionários</h2>
-            <form class="search-container" id="searchForm">
-                
-                <input 
-                    type="search" 
-                    id="search-input" 
-                    class="search-input" 
-                    placeholder="Buscar por nome"> <button type="submit"     class="search-button">Pesquisar</button>
-            </form>
-        </section>
+        <div class="page-wrapper">
 
-        <section class="style-search-container">
-            <form id="register-form" method="post" class="container-client-form">
-
-                <div class="register-container">
-                    
-                    <div class="input-container">
-                        <label for="nome_funcionario">Nome do Funcionário</label>
-                        <input type="text" name="nome_funcionario" id="nome_funcionario" placeholder="Digite o nome completo">
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="tel_funcionario">Telefone</label>
-                        <input type="text" name="tel_funcionario" id="tel_funcionario" placeholder="Ex: (11) 98765-4321">
-                    </div>
-
-                    <div class="input-container">
-                        <label for="id_funcao">ID da Função</label>
-                        <input type="number" name="id_funcao" id="id_funcao" placeholder="Digite o ID da função">
-                    </div>
-                    
-                </div> 
-                <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Cadastrar Funcionário</button>
-
-            </form>
-        </section>
-
-        <section class="style-search-container" id="funcContainer">
-            <h2 class="dashboard-title"><i class="fa-solid fa-list"></i>Funcionários Cadastrados</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>Função</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaFuncs">
-                    <!-- Dados dos funcionários serão inseridos aqui dinamicamente -->
-                </tbody>
-            </table>
+            <header class="main-header">
+                <h1 class="title">Gerenciador de Funcionários</h1>
+                <h2 class="sub-title">Cadastro e gerenciamento de funcionários</h2>
+            </header>
             
-            <div class="prox-ant-container">
-                <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
-                <button class="button">Proxima  <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </section>
-    </main>
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Funcionários</h2>
+                <form class="search-container" method="post" id="searchForm">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Buscar por nome">
+                    <button type="submit" class="search-button">Pesquisar</button>
+                </form>
+            </section>
+
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-user-plus"></i>Cadastrar Novo Funcionário</h2>
+                <form id="register-form">
+
+                    <div class="register-container">
+                        <div class="input-container">
+                            <label for="nome_funcionario">Nome do Funcionário</label>
+                            <input type="text" name="nome_funcionario" id="nome_funcionario" placeholder="Digite o nome completo">
+                        </div>
+                        <div class="input-container">
+                            <label for="tel_funcionario">Telefone</label>
+                            <input type="text" name="tel_funcionario" id="tel_funcionario" placeholder="Ex: (11) 98765-4321">
+                        </div>
+                        <div class="input-container">
+                            <label for="id_funcao">ID da Função</label>
+                            <input type="number" name="id_funcao" id="id_funcao" placeholder="Digite o ID da função">
+                        </div>
+                    </div> 
+                    
+                    <button class="orders-button button" type="submit">
+                        <i class="fa-solid fa-floppy-disk"></i>Cadastrar Funcionário
+                    </button>
+                </form>
+            </section>
+
+            <section class="card-container" id="funcContainer">
+                <h2 class="card-title"><i class="fa-solid fa-list"></i>Funcionários Cadastrados</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Função</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaFuncs">
+                            </tbody>
+                    </table>
+                </div>
+                
+                <div class="prox-ant-container">
+                    <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
+                    <button class="button">Proxima <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </footer>
+
+        </div> </main>
+
     <script type="module" src="../js/funcionarios.js"></script>
-</body>
+    
+    </body>
 </html>

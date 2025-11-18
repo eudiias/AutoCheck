@@ -10,19 +10,18 @@
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="sidebar">
-            
-            <div class="sidebar-logo">
-                <img src="../imagens/Logo.png" alt="Logo">
-            </div>
+    <header class="top-navbar">
+        <div class="navbar-logo">
+            <img src="../imagens/Logo.png" alt="Logo">
+        </div>
 
-            <ul class="nav-links">
+        <nav class="navbar-nav">
+            <ul class="nav-links" id="nav-links">
                 <li>
-                    <a href="#" class="active"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+                    <a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a>
+                    <a href="clientes.html" ><i class="fa-solid fa-users"></i>Clientes</a>
                 </li>
                 <li>
                     <a href="veiculos.html"><i class="fa-solid fa-car"></i>Veiculos</a>
@@ -40,69 +39,56 @@
                     <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
                 </li>
             </ul>
-            
-            <div class="sidebar-footer">
-                <p>© 2025 LTDA AutoCheck</p>
-            </div>
         </nav>
+        
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
     <main class="main-content">
-        <h1 class="title">Dashboard</h1>
-        <h2 class="sub-title">Visão geral do sistema</h2>
-        
-        <section class="dashboard-info">
-            <article class="info-item">
-                <h2 class="dashboard-title"><i class="fa-solid fa-users"></i>Clientes</h2>
-                <p id="client-count">0</p>
-                <p class="info-p">Clientes cadastrados</p>
-            </article>
+        <div class="page-wrapper">
 
-            <article class="info-item">
-                <h2 class="dashboard-title"><i class="fa-solid fa-car"></i>Veículos</h2>
-                <p id="vehicle-count">0</p>
-                <p class="info-p">Veículos cadastrados</p>
-            </article>
-
-            <article class="info-item">
-                <h2 class="dashboard-title"><i class="fa-solid fa-clock"></i>Pendentes</h2>
-                <p id="pending-count">0</p>
-                <p class="info-p">Serviços Pendentes</p>
-            </article>
-
-            <article class="info-item">
-                <h2 class="dashboard-title"><i class="fa-solid fa-circle-check"></i>Concluidos</h2>
-                <p id="completed-count">0</p>
-                <p class="info-p">Serviços Concluídos</p>
-            </article>
-
+            <h1 class="title">Dashboard</h1>
+            <h2 class="sub-title">Visão geral do sistema</h2>
             
-        </section>
+            <section class="dashboard-info">
+                <article class="info-item">
+                    <h2 class="dashboard-title"><i class="fa-solid fa-users"></i>Clientes</h2>
+                    <p id="client-count">0</p>
+                    <p class="info-p">Clientes cadastrados</p>
+                </article>
 
-        <section class="container">
-            <section class="container-shortcuts">
-                <h2 class="dashboard-title"><i class="fa-solid fa-bolt"></i>Atalhos</h2>
+                <article class="info-item">
+                    <h2 class="dashboard-title"><i class="fa-solid fa-car"></i>Veículos</h2>
+                    <p id="vehicle-count">0</p>
+                    <p class="info-p">Veículos cadastrados</p>
+                </article>
 
-                <article class="container-buttons">
-                    <button class="orders-button button"><i class="fa-solid fa-user-plus"></i>Novo Cliente</button>
-                    <button class="button"><i class="fa-solid fa-car-on"></i>Novo carro</button>
-                    <button class="button"><i class="fa-solid fa-plus"></i>Nova triagem</button>
+                <article class="info-item">
+                    <h2 class="dashboard-title"><i class="fa-solid fa-clock"></i>Pendentes</h2>
+                    <p id="pending-count">0</p>
+                    <p class="info-p">Serviços Pendentes</p>
+                </article>
+
+                <article class="info-item">
+                    <h2 class="dashboard-title"><i class="fa-solid fa-circle-check"></i>Concluidos</h2>
+                    <p id="completed-count">0</p>
+                    <p class="info-p">Serviços Concluídos</p>
                 </article>
             </section>
-            <section class="container-shortcuts">
-                <h2 class="dashboard-title"><i class="fa-solid fa-chart-column"></i>Status do sistema</h2>
-                <article class="container-services">
-                    <div class="services">
-                        <p>Banco de dados</p>
-                        <p class="online-status">Online</p>
-                    </div>
-                    <div class="services">
-                        <p>Servidor</p>
-                        <p class="online-status">Online</p>
-                    </div>
-                </article>
+
+            <section class="container">
+                <section class="container-shortcuts">
+                    <h2 class="dashboard-title"><i class="fa-solid fa-bolt"></i>Atalhos</h2>
+                    <article class="container-buttons">
+                        <button class="orders-button button"><i class="fa-solid fa-user-plus"></i>Novo Cliente</button>
+                        <button class="button"><i class="fa-solid fa-car-on"></i>Novo carro</button>
+                        <button class="button"><i class="fa-solid fa-plus"></i>Nova triagem</button>
+                    </article>
+                </section>
             </section>
-        </section>
-    </main>
+        
+        </div> </main>
 </body>
 </html>
