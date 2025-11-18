@@ -4,7 +4,7 @@ async function Main(){
     console.log(funcionarios)
     return funcionarios;
 }
-const funcionarios = Main();
+const funcionarios = await Main();
 
     async function atualizarLista(funcionarios){
         try {
