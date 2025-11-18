@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Triagem</title>
+    <title>Triagem - AutoCheck</title>
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="sidebar">
-            
-            <div class="sidebar-logo">
-                <img src="../imagens/Logo.png" alt="Logo">
-            </div>
 
-            <ul class="nav-links">
+    <header class="top-navbar">
+        <div class="navbar-logo">
+            <img src="../imagens/Logo.png" alt="Logo">
+        </div>
+
+        <nav class="navbar-nav">
+            <ul class="nav-links" id="nav-links">
                 <li>
                     <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
                 </li>
@@ -40,57 +40,65 @@
                     <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
                 </li>
             </ul>
-            
-            <div class="sidebar-footer">
-                <p>© 2025 LTDA AutoCheck</p>
-            </div>
         </nav>
+        
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
     <main class="main-content">
-        <h1 class="title">Formulário de Triagem</h1>
-        <h2 class="sub-title">Preenchimento do problema e encaminhamento</h2>
-        
-        <section class="style-search-container">
-            <h2 class="dashboard-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
+        <div class="page-wrapper">
 
-            <form action="#" method="post" class="container-client-form">
+            <header class="main-header">
+                <h1 class="title">Formulário de Triagem</h1>
+                <h2 class="sub-title">Preenchimento do problema e encaminhamento</h2>
+            </header>
+            
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
 
-                <div class="register-container">
-                    
-                    <div class="input-container">
-                        <label for="id_funcionario">ID do Funcionário</label>
-                        <input type="number" name="id_funcionario" id="id_funcionario" placeholder="ID do mecânico/atendente">
+                <form class="container-client-form">
+
+                    <div class="register-container">
+                        
+                        <div class="input-container">
+                            <label for="id_funcionario">ID do Funcionário</label>
+                            <input type="number" name="id_funcionario" id="id_funcionario" placeholder="ID do mecânico/atendente">
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="placa_carro">Placa do Carro</label>
+                            <input type="text" name="placa_carro" id="placa_carro" placeholder="Ex: ABC1D23">
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="data_triagem">Data da Triagem</label>
+                            <input type="date" name="data_triagem" id="data_triagem">
+                        </div>
+                        
+                        <div class="input-container full-width">
+                            <label for="problema">Descrição do Problema</label>
+                            <textarea 
+                                name="problema" 
+                                id="problema" 
+                                rows="8" 
+                                class="form-textarea" /* Classe nova, style removido */
+                                placeholder="Descreva em detalhes o problema relatado pelo cliente..."
+                            ></textarea>
+                        </div>
                     </div>
                     
-                    <div class="input-container">
-                        <label for="placa_carro">Placa do Carro</label>
-                        <input type="text" name="placa_carro" id="placa_carro" placeholder="Ex: ABC1D23">
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="data_triagem">Data da Triagem</label>
-                        <input type="date" name="data_triagem" id="data_triagem">
-                    </div>
+                    <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
 
-                </div>
+                </form>
+            </section>
+            
+            <footer class="main-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </footer>
 
-                <div class="input-container">
-                    <label for="problema">Descrição do Problema</label>
-                    <textarea 
-                        name="problema" 
-                        id="problema" 
-                        rows="8" 
-                        placeholder="Descreva em detalhes o problema relatado pelo cliente..." 
-                        style="width: 100%; font-size: 1.2rem; padding: 1rem; border-radius: 0.5rem; background-color: #393838; border: 1px solid #19191973; color: #e0e0e0; box-sizing: border-box; font-family: Arial, sans-serif;"
-                    ></textarea>
-                </div>
-                
-                <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
+        </div> </main>
 
-            </form>
-        </section>
-
-        </main>
 </body>
 </html>

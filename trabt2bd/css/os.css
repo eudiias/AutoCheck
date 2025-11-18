@@ -1,26 +1,38 @@
-.editable-table-input, .editable-table-select {
+.editable-table-input, 
+.editable-table-select {
     width: 100%;
-    font-size: 1.1rem;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-    background-color: #393838;
-    border: 1px solid #19191973;
-    color: #e0e0e0;
+    padding: 0.75rem; 
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto-principal); 
+    font-size: 1rem; 
+    border: 1px solid var(--cor-ui-hover);
+    border-radius: 8px; 
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    transition: border-color 0.2s ease;
 }
-.editable-table-input:focus, .editable-table-select:focus {
+
+.editable-table-input:focus, 
+.editable-table-select:focus {
     outline: none;
-    border-color: #1877f2;
+    border-color: var(--cor-destaque-primario); 
+}
+
+.editable-table-input::-webkit-outer-spin-button,
+.editable-table-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.editable-table-input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .save-button {
-    background-color: #1f8a3559;
-    border: none;
+    background-color: var(--cor-destaque-sucesso);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
 }
-.save-button:hover {
-    background-color: #1f8a3524;
-}
-.save-button:active {
-    background-color: #1f8a3559;
+.save-button:hover { 
+    background-color: #27ae60;
 }
