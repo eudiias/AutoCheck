@@ -82,7 +82,7 @@ const funcao = await responseFun.json();
                 return;
             }
             alert('Funcionário atualizado com sucesso!');
-            atualizarLista();
+            location.reload();
         } catch (error) {
             console.error('Erro ao atualizar funcionário:', error);
             alert('Erro ao atualizar funcionário. Verifique o console para mais detalhes.');
