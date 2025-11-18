@@ -68,32 +68,59 @@ const funcionarios = await response.json();
             }
 
             alert('Funcionário adicionado com sucesso!');
-            atualizarLista();
+            atualizarLista(funcionarios);
         } catch (error) {
             console.error('Erro ao adicionar funcionário:', error);
             alert('Erro ao adicionar funcionário.');
         }
     }
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById("register-form").addEventListener("submit",event => {
-            event.preventDefault()
-            const user = {
-                nome_funcionario: document.getElementById('nome_funcionario').value,
-                telefone_funcionario: document.getElementById('tel_funcionario').value,
-                id_funcoes: document.getElementById('id_funcao').value
-            };
-            console.log(user)
-            adicionarUsuario(user);
-        })
-        document.getElementById("searchForm").addEventListener("submit",event => {
-            event.preventDefault()
-            const termoBusca = document.getElementById('searchInput').value.toLowerCase();
-            const funcionariosFiltrados = funcionarios.filter(funcionario => 
-                funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
-                funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
-                funcionario.funcao.toLowerCase().includes(termoBusca)
-            );
-            atualizarLista(funcionariosFiltrados);
-        });
+
+    function inicializarEventos() {
+        const registerForm = document.getElementById("register-form");
+        const searchInput = document.getElementById('search-input');
+        const searchForm = document.getElementById("searchForm");
+
+        if (registerForm) {
+            registerForm.addEventListener("submit", event => {
+                event.preventDefault()
+                const user = {
+                    nome_funcionario: document.getElementById('nome_funcionario').value,
+                    telefone_funcionario: document.getElementById('tel_funcionario').value,
+                    id_funcoes: document.getElementById('id_funcao').value
+                };
+                adicionarUsuario(user);
+            })
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', event => {
+                const termoBusca = event.target.value.toLowerCase();
+                const funcionariosFiltrados = funcionarios.filter(funcionario =>
+                    funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
+                    funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
+                    funcionario.funcao.toLowerCase().includes(termoBusca)
+                );
+                atualizarLista(funcionariosFiltrados);
+            });
+        }
+
+        if (searchForm) {
+            searchForm.addEventListener("submit", event => {
+                event.preventDefault()
+                const termoBusca = document.getElementById('search-input').value.toLowerCase();
+                const funcionariosFiltrados = funcionarios.filter(funcionario => 
+                    funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
+                    funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
+                    funcionario.funcao.toLowerCase().includes(termoBusca)
+                );
+                atualizarLista(funcionariosFiltrados);
+            });
+        }
         atualizarLista(funcionarios);
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', inicializarEventos);
+    } else {
+        inicializarEventos();
+    }
