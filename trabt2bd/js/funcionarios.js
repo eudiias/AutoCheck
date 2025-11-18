@@ -1,10 +1,5 @@
-async function Main(){
-    const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
-    const funcionarios = await response.json();
-    console.log(funcionarios)
-    return funcionarios;
-}
-const funcionarios = await Main();
+const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
+const funcionarios = await response.json();
 
     async function atualizarLista(funcionarios){
         try {
@@ -91,6 +86,7 @@ const funcionarios = await Main();
     })
     document.getElementById("searchForm").addEventListener("submit",event => {
         event.preventDefault()
+        console.log(document.getElementById('searchInput'))
         const termoBusca = document.getElementById('searchInput').value.toLowerCase();
         const funcionariosFiltrados = funcionarios.filter(funcionario => 
             funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
