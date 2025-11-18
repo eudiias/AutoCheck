@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/os.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -63,13 +64,19 @@
                     <div class="register-container">
                         
                         <div class="input-container">
-                            <label for="id_funcionario">ID do Funcionário</label>
-                            <input type="number" name="id_funcionario" id="id_funcionario" placeholder="ID do mecânico/atendente">
+                            <label for="nomeFuncionario">Nome Funcionario</label>
+                            <select name="nomeFuncionario" class="editable-table-select">
+                                <option value="dias" selected>DIAS</option>
+                                <option value="kauan">KAUAN</option>
+                            </select>
                         </div>
                         
                         <div class="input-container">
                             <label for="placa_carro">Placa do Carro</label>
-                            <input type="text" name="placa_carro" id="placa_carro" placeholder="Ex: ABC1D23">
+                            <select name="placa_carro" class="editable-table-select">
+                                <option value="ABX1K12" selected>ABX1K12</option>
+                                <option value="OHU5O98">OHU5O98</option>
+                            </select>
                         </div>
                         
                         <div class="input-container">

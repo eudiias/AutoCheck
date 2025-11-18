@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/os.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -110,7 +111,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            </tbody>
+                            <td class="table-cellula">
+                                <input type="text" name="nomeCliente" id="nomeCliente" class="editable-table-input">
+                            </td>
+                            <td class="table-cellula">
+                                <input type="text" name="cpfCliente" id="cpfCliente" class="editable-table-input">
+                            </td>
+                            <td class="table-cellula">
+                                <input type="tel" name="telCliete" id="telCliente" class="editable-table-input">
+                            </td>
+                            <td class="table-cellula table-cellula-buttons">
+                                    <button class="button save-button">Salvar</button>
+                                    <button class="button">Excluir</button>
+                            </td>
+                        </tbody>
                     </table>
                 </div>
                 
@@ -127,7 +141,7 @@
         </div> 
     </main>
 
-    <script>
+    <!--<script>
         async function fetchClientes() {
             try {
                 const response = await fetch('https://fatecbackend.vercel.app/api/clientes/listar');
@@ -159,6 +173,6 @@
         // menuToggle.addEventListener('click', () => {
         //     navLinks.classList.toggle('open');
         // });
-    </script>
+    </script>-->
 </body>
 </html>

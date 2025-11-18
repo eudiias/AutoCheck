@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/os.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -106,8 +107,26 @@
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="tabelaFuncs">
-                            </tbody>
+                        <tbody id="tabelaFunc">
+                            <tr>
+                                <td class="table-cellula">
+                                    <input type="text" name="nomeFunc" id="nomeFunc" class="editable-table-input">
+                                </td>
+                                <td class="table-cellula">
+                                    <input type="tel" name="telFunc" id="telFunc" class="editable-table-input">
+                                </td>
+                                <td class="table-cellula">
+                                    <select name="nomeFuncao" class="editable-table-select">
+                                        <option value="mecanico" selected>MECÂNICO</option>
+                                        <option value="auxiliar de mecanico">AUXILIAR DE MECÂNICO</option>
+                                    </select>
+                                </td>
+                                <td class="table-cellula table-cellula-buttons">
+                                    <button class="button save-button">Salvar</button>
+                                    <button class="button">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 

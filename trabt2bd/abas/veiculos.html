@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/os.css">
     <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -102,7 +103,18 @@
                             </tr>
                         </thead>
                         <tbody id="table-main">
-                           </tbody>
+                            <td class="table-cellula">ABX1K76</td>
+                            <td class="table-cellula">
+                                <select name="nomeFuncao" class="editable-table-select">
+                                        <option value="dias" selected>DIAS</option>
+                                        <option value="kauan">KAUAN</option>
+                                </select>
+                            </td>
+                            <td class="table-cellula table-cellula-buttons">
+                                    <button class="button save-button">Salvar</button>
+                                    <button class="button">Excluir</button>
+                            </td>
+                        </tbody>
                     </table>
                 </div>
                 
@@ -118,7 +130,7 @@
 
         </div> </main>
 
-    <script>
+    <!--<script>
         async function fetchVeiculos() {
             try {
                 const response = await fetch('https://fatecbackend.vercel.app/api/veiculos/listar');
@@ -142,6 +154,6 @@
             }
         }
         fetchVeiculos();
-    </script>
+    </script>-->
 </body>
 </html>
