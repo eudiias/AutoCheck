@@ -176,3 +176,9 @@
     .title { font-size: 1.8rem; }
     .dashboard-title { font-size: 1.3rem; }
 }
+
+/*CSS do Modal - Clientes*/
+.modal{
+    display: none;
+}
+/*Fim do CSS Modal - Clientes*/

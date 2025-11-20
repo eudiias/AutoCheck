@@ -82,7 +82,7 @@
                 <section class="container-shortcuts">
                     <h2 class="dashboard-title"><i class="fa-solid fa-bolt"></i>Atalhos</h2>
                     <article class="container-buttons">
-                        <button class="orders-button button"><i class="fa-solid fa-user-plus"></i>Novo Cliente</button>
+                        <button class="orders-button button" onclick="iniciarModal('modalClientes')"><i class="fa-solid fa-user-plus"></i>Novo Cliente</button>
                         <button class="button"><i class="fa-solid fa-car-on"></i>Novo carro</button>
                         <button class="button"><i class="fa-solid fa-plus"></i>Nova triagem</button>
                     </article>
@@ -91,6 +91,29 @@
         
         </div>
     </main>
+
+    <!--Criação do Modal-->
+    <div id="modalClientes" class="modal">
+        <div class="cont-modal">
+            <h1>Novo Cliente</h1>
+
+            <form>
+                <label>Nome:</label>
+                <input type="text" id="nomeCliente"><br>
+                <label>CPF:</label>
+                <input type="text" id="cpfCliente" pattern="\d(3)\.\d(3)\.\d(3)-\d(2)" placeholder="000.000.000-00"><br>
+                <label>Telefone:</label>
+                <input type="text" id="telCliente" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(00) 0 0000-0000">
+
+                <div class="botoesModal">
+                    <button onclick="">Confirmar</button>
+                    <button onclick="">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Fim Modal Clientes-->
+    
     <script type="module" src="../js/dashboard.js"></script>
 </body>
 </html>
