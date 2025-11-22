@@ -97,7 +97,7 @@
         <div class="cont-modal">
             <h1>Novo Cliente</h1>
 
-            <form>
+            <form id="formNovoCliente">
                 <label for="nomeCliente">Nome:</label>
                 <input type="text" id="nomeCliente" required>
 
@@ -121,9 +121,11 @@
         <div class="cont-modal">
             <h1>Novo Carro</h1>
 
-            <form>
+            <form id="formNovoCarro">
                 <label>Cliente:</label>
-                <input type="text" id="nomeCliente" required><br>
+                <select id="selectClientes" required>
+                    <option value="">Carregando Clientes...</option>
+                </select><br>
                 <label>Número da placa:</label>
                 <input type="text" id="num-placa" required>
 
@@ -141,7 +143,7 @@
         <div class="cont-modal">
             <h1>Nova Triagem</h1>
 
-            <form>
+            <form id="formNovaTriagem">
                 <label>Funcionário:</label>
                 <select id="selectFuncionarios" required>
                     <option value="">Carregando Funcionários...</option>
