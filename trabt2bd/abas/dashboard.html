@@ -98,16 +98,18 @@
             <h1>Novo Cliente</h1>
 
             <form>
-                <label>Nome:</label>
-                <input type="text" id="nomeCliente" required><br>
-                <label>CPF:</label>
-                <input type="text" id="cpfCliente" pattern="\d(3)\.\d(3)\.\d(3)-\d(2)" placeholder="000.000.000-00" required><br>
-                <label>Telefone:</label>
-                <input type="text" id="telCliente" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(00) 0 0000-0000" required><br>
+                <label for="nomeCliente">Nome:</label>
+                <input type="text" id="nomeCliente" required>
+
+                <label for="cpfCliente">CPF:</label>
+                <input type="text" id="cpfCliente" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required>
+
+                <label for="telCliente">Telefone:</label>
+                <input type="text" id="telCliente" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(00) 0 0000-0000" required>
 
                 <div class="botoesModal">
-                    <button type="submit" id="ConfCliente">Confirmar</button>
                     <button type="reset" id="CancCliente">Cancelar</button>
+                    <button type="submit" id="ConfCliente">Confirmar</button>
                 </div>
             </form>
         </div>

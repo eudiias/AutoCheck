@@ -177,9 +177,9 @@
     .dashboard-title { font-size: 1.3rem; }
 }
 
-/*CSS Modal - Clientes*/
+/*CSS Modal*/
 
-.modal{
+.modal {
     display: none;
     position: fixed;
     top: 0;
@@ -188,15 +188,153 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(4px); 
     z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
 }
 
-.cont-modal{
-    background-color: #4A4B52;
-    padding: 35px 40px;
-    border-radius: 8px;
-    min-width: 450px;
-    max-width: 500px;
-    color: whitesmoke;
+
+.cont-modal {
+    background-color: #2C2D33;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 500px; 
+    color: #f5f5f5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+
+.cont-modal h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    color: var(--cor-destaque-primario, #3498db); /* Fallback azul se a var falhar */
+}
+
+
+
+.cont-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-modal label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+
+.cont-modal input[type="text"],
+.cont-modal input[type="date"],
+.cont-modal select,
+.cont-modal textarea {
+    background-color: #1F2024; 
+    border: 1px solid #4A4B52;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    font-size: 1rem;
+    width: 100%; 
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.cont-modal input:focus,
+.cont-modal select:focus,
+.cont-modal textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque-primario, #3498db);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.cont-modal textarea {
+    resize: vertical; 
+    min-height: 100px;
+    font-family: inherit;
+}
+
+
+.cont-modal ::placeholder {
+    color: #666;
+}
+
+/* =========================================
+   BOTÕES DO MODAL
+   ========================================= */
+
+.botoesModal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.botoesModal button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+button[id^="Conf"] { 
+    background-color: var(--cor-destaque-primario, #007bff);
+    color: white;
+}
+
+button[id^="Conf"]:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+
+button[id^="Canc"] {
+    background-color: transparent;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}
+
+button[id^="Canc"]:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .cont-modal {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .botoesModal {
+        flex-direction: column-reverse; /* Botão confirmar em cima no mobile */
+    }
+    
+    .botoesModal button {
+        width: 100%;
+    }
 }
