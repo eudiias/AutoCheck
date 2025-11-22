@@ -118,7 +118,7 @@
             <section class="card-container">
                 <h2 class="card-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
 
-                <form class="container-client-form">
+                <form class="container-client-form" id="formNovaTriagem">
 
                     <div class="register-container">
                         
@@ -132,7 +132,7 @@
                         
                         <div class="input-container">
                             <label for="placa_carro">Placa do Carro</label>
-                            <select name="placa_carro" class="editable-table-select">
+                            <select id="formPlacaCarro" name="placa_carro" class="editable-table-select">
                                 <option value="ABX1K12" selected>ABX1K12</option>
                                 <option value="OHU5O98">OHU5O98</option>
                             </select>
@@ -165,6 +165,6 @@
             </footer>
 
         </div> </main>
-
+    <script type="module" src="../js/triagem.js"></script>
 </body>
 </html>
