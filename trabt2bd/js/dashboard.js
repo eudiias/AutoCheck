@@ -185,6 +185,8 @@ async function adicionarCarro(carro){
                 placa_carro
             })
         });
+        alert('Veiculo adicionado com sucesso!');
+        location.reload();
     } catch {
         console.error('Erro ao adicionar Veiculo:',error)
         alert('Erro ao adicionar veiculo')
